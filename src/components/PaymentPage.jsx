@@ -85,7 +85,6 @@ const PaymentPage = ({ totalPrice, isBackend, onPaymentComplete }) => {
                     <Typography variant="body2">{receiptFile.name}</Typography>
                   </Grid>
                   <Grid item>
-                    Grid item>
                     <Button variant="outlined" color="secondary" onClick={handleDeleteReceipt}>
                       Delete
                     </Button>
