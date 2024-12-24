@@ -50,7 +50,7 @@ export default function CakeOrderFormMailto() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handlePaymentComplete = (receiptFile) => {
+  const handlePaymentComplete = () => {
     const orderData = {
       shape,
       size,
@@ -63,7 +63,6 @@ export default function CakeOrderFormMailto() {
       customerPhone,
       customerEmail,
       customerNotes,
-      receiptFile: receiptFile.name,
     };
 
     setOrderDetails(orderData);
@@ -92,10 +91,10 @@ export default function CakeOrderFormMailto() {
       Special Instructions:
       ${customerNotes}
 
-      Receipt file: ${receiptFile.name}
+      Payment Status: Confirmed
     `);
 
-    window.location.href = `mailto:hmsaadiq@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:orders@frostedcrusts.com?subject=${subject}&body=${body}`;
   };
 
   const handleNewOrder = () => {
@@ -176,7 +175,7 @@ export default function CakeOrderFormMailto() {
             <OrderConfirmation orderDetails={orderDetails} onNewOrder={handleNewOrder} />
           ) : (
             <>
-              <Stepper activeStep={activeStep} alternativeLabel sx={{ mb: 4 }}>
+              <Stepper activeStep={activeStep} alternativeLabel sx={{ mb: 4, overflowX: 'auto', flexWrap: 'nowrap' }}>
                 {steps.map((label) => (
                   <Step key={label}>
                     <StepLabel>{label}</StepLabel>
