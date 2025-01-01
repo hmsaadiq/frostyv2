@@ -94,7 +94,7 @@ export default function CakeOrderFormMailto() {
       Payment Status: Confirmed
     `);
 
-    window.location.href = `mailto:orders@frostedcrusts.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:hmsaadiq@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const handleNewOrder = () => {
